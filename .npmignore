@@ -1,6 +1,9 @@
 # Custom
 TODO
 
+# Build
+tsconfig.build.tsbuildinfo
+
 # Only for development
 /src
 /.github

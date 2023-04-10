@@ -4,6 +4,30 @@
   "description": "Package that allows you to easily interact with the Everest TMS.",
   "company": "Cogepart",
   "author": "ABBAL Sébastien",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "keywords": [
+    "tms",
+    "everest",
+    "connector",
+    "edi",
+    "everst",
+    "api",
+    "logistic",
+    "transport",
+    "dms"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebastien-abbal/everest-tms-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sebastien-abbal/everest-tms-api/issues"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "homepage": "https://github.com/sebastien-abbal/everest-tms-api#readme",
   "private": false,
   "license": "MIT",
   "scripts": {

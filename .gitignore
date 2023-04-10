@@ -4,6 +4,7 @@ TODO
 # Compiled output
 /lib
 /node_modules
+tsconfig.build.tsbuildinfo
 
 # Envs
 .env
