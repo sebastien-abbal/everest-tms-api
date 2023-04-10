@@ -1,7 +1,7 @@
-import { EverestApi } from '@src/services/everest-api';
-import { SERVICE_1_ID } from '@src/tests/config/constants';
-import { MissionStatusEnum, OrderByEnum } from '@src/types/enums';
 import { config as dotenvConfig } from 'dotenv';
+import { EverestApi } from '../services/everest-api';
+import { SERVICE_1_ID } from '../tests/config/constants';
+import { MissionStatusEnum, OrderByEnum } from '../types/enums';
 
 dotenvConfig();
 

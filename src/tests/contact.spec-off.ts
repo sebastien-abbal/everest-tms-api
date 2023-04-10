@@ -1,6 +1,6 @@
-import { EverestApi } from '@src/services/everest-api';
 import { config as dotenvConfig } from 'dotenv';
 import { v4 as uuid } from 'uuid';
+import { EverestApi } from '../services/everest-api';
 
 dotenvConfig();
 

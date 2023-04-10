@@ -1,6 +1,6 @@
-import { EverestApi } from '@src/services/everest-api';
-import { InvoiceTypeEnum } from '@src/types';
 import { config as dotenvConfig } from 'dotenv';
+import { EverestApi } from '../services/everest-api';
+import { InvoiceTypeEnum } from '../types';
 
 dotenvConfig();
 

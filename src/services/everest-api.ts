@@ -1,4 +1,3 @@
-import { config } from '@src/config';
 import axios, { AxiosInstance } from 'axios';
 import {
   EverestRoutesEnum,
@@ -49,6 +48,7 @@ import {
   IEverestUpdateMissionInput,
   IEverestUpdateMissionStatusInput,
 } from '..';
+import { config } from '../config';
 
 export class EverestApi {
   private endpoint: string;
