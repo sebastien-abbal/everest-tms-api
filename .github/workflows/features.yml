@@ -1,0 +1,40 @@
+name: CI-PACKAGE
+
+on:
+  push:
+    branches:
+      - '*' # matches every branch that doesn't contain a '/'
+      - '*/*' # matches every branch containing a single '/'
+      - '**' # matches every branch
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        runs-on: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.runs-on }}
+    env:
+      NODE_ENV: test
+      API_ENDPOINT_URL: ${{ secrets.API_ENDPOINT_URL }}
+      API_CLIENT_ID: ${{ secrets.API_CLIENT_ID }}
+      API_CLIENT_SECRET: ${{ secrets.API_CLIENT_SECRET }}
+
+    steps:
+      - name: Actions checkout
+        uses: actions/checkout@v3
+
+      - name: Set up node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+
+      # Build
+      - name: Install packages
+        run: yarn
+
+      - name: Build package
+        run: yarn build
+
+      # Test
+      - name: Test package
+        run: yarn test
