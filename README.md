@@ -86,12 +86,12 @@ For example, if we want to create a new agent, we need to do that (from an async
 const api = new EverestApi({...});
 await api.authenticate();
 await api.createAgent({
-    email: `${uuid()}@test.fr`,
+    email: `leon-lefebvre@example.com`,
     first_name: 'Léon',
     last_name: 'LEFEBVRE',
     password: "#abcdefg&123456789!",
     password_repeat: "#abcdefg&123456789!",
-    address_line1: '1 Rue de la République, 13002 Marseille',
+    address_line1: '1 Example road, London, UK',
 })
 ```
 
