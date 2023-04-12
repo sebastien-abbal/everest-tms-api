@@ -536,7 +536,7 @@ export class EverestApi {
     const instance = this.createInstance(this.authToken);
 
     try {
-      const result = await instance.get(EverestRoutesEnum.GET_INVOICE, {
+      const result = await instance.get(EverestRoutesEnum.GET_CONTACT, {
         data: input,
       });
       return result.data;
@@ -551,7 +551,7 @@ export class EverestApi {
     const instance = this.createInstance(this.authToken);
 
     try {
-      const result = await instance.get(EverestRoutesEnum.GET_INVOICES, {
+      const result = await instance.get(EverestRoutesEnum.GET_CONTACTS, {
         data: input,
       });
       return result.data;
@@ -567,7 +567,7 @@ export class EverestApi {
 
     try {
       const result = await instance.post(
-        EverestRoutesEnum.CREATE_INVOICE,
+        EverestRoutesEnum.CREATE_CONTACT,
         input,
       );
       return result.data;
@@ -583,7 +583,7 @@ export class EverestApi {
 
     try {
       const result = await instance.put(
-        EverestRoutesEnum.UPDATE_INVOICE,
+        EverestRoutesEnum.UPDATE_CONTACT,
         input,
       );
       return result.data;
@@ -598,7 +598,7 @@ export class EverestApi {
     const instance = this.createInstance(this.authToken);
 
     try {
-      const result = await instance.delete(EverestRoutesEnum.DELETE_INVOICE, {
+      const result = await instance.delete(EverestRoutesEnum.DELETE_CONTACT, {
         data: input,
       });
       return result.data;
