@@ -1,7 +1,7 @@
 import { config as dotenvConfig } from 'dotenv';
 import { EverestApi } from '../services/everest-api';
 import { SERVICE_1_ID } from '../tests/config/constants';
-import { MissionStatusEnum, OrderByEnum } from '../types/enums';
+import { EverestMissionStatusEnum, OrderByEnum } from '../types/enums';
 
 dotenvConfig();
 
@@ -302,13 +302,13 @@ describe('Everest service - Mission', () => {
       return authenticatedEverestApi
         .updateMissionStatus({
           ref: mission_ref,
-          status: MissionStatusEnum.scanned,
+          status: EverestMissionStatusEnum.scanned,
         })
         .then((res) => {
           expect(res.success).toBe(true);
           expect(res.mission).toMatchObject({
             ref: mission_ref,
-            status: MissionStatusEnum.scanned,
+            status: EverestMissionStatusEnum.scanned,
           });
         });
     });
@@ -317,7 +317,7 @@ describe('Everest service - Mission', () => {
       return authenticatedEverestApi
         .updateMissionStatus({
           ref: 'wrong-ref',
-          status: MissionStatusEnum.delivered,
+          status: EverestMissionStatusEnum.delivered,
         })
         .then((res) => {
           expect(res).toHaveProperty('error');

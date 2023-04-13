@@ -1,4 +1,4 @@
-import { MissionStatusEnum, OrderByEnum } from '../enums';
+import { EverestMissionStatusEnum, OrderByEnum } from '../enums';
 import {
   IEverestMission,
   IEverestMissionCustomInfos,
@@ -150,10 +150,10 @@ export interface IEverestCreateMissionInput {
   agent_price_excl?: number;
   /**
    *
-   * @type {MissionStatusEnum}
+   * @type {EverestMissionStatusEnum}
    * @memberof IEverestCreateMissionInput
    */
-  status?: MissionStatusEnum;
+  status?: EverestMissionStatusEnum;
   /**
    *
    * @type {string}
@@ -338,10 +338,10 @@ export interface IEverestUpdateMissionInput {
   agent_price_excl?: number;
   /**
    *
-   * @type {MissionStatusEnum}
+   * @type {EverestMissionStatusEnum}
    * @memberof IEverestUpdateMissionInput
    */
-  status?: MissionStatusEnum;
+  status?: EverestMissionStatusEnum;
   /**
    *
    * @type {string}
@@ -494,10 +494,10 @@ export interface IEverestUpdateMissionStatusInput {
   ref: string;
   /**
    *
-   * @type {MissionStatusEnum}
+   * @type {EverestMissionStatusEnum}
    * @memberof IEverestUpdateMissionStatusInput
    */
-  status: MissionStatusEnum;
+  status: EverestMissionStatusEnum;
   /**
    *
    * @type {string}
