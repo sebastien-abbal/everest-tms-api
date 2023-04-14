@@ -41,17 +41,6 @@ export enum EverestRoutesEnum {
   CREATE_CONTACT_EVENT = '/contacts/event',
 }
 
-export enum EverestMissionStatusEnum {
-  supported = 'pris-en-charge',
-  canceled = 'annul',
-  new = 'nouvelle-mission',
-  scanned = 'scann',
-  scheduled = 'planifi',
-  delivered = 'livr',
-  failed = 'echec',
-  affected = 'affect',
-}
-
 export enum ClientStatusEnum {
   inactive = '0',
   active = '1',
