@@ -1,4 +1,3 @@
-import { HookEnum } from '../enums';
 import {
   IEverestAgentCreatedHook,
   IEverestAgentDeletedHook,
@@ -131,16 +130,3 @@ export type IEverestHook =
   | IEverestMissionSuccessHook
   | IEverestMissionUpdatedHook
   | IEverestMissionsImportedHook;
-
-const result = { event: HookEnum.agent_deleted, agent_id: 1 } as IEverestHook;
-
-switch (result.event) {
-  case HookEnum.agent_deleted:
-    console.log(result.agent_id);
-    break;
-  case HookEnum.agent_created:
-    console.log(result.available);
-    break;
-  default:
-    console.log('Webhook not recognized');
-}
