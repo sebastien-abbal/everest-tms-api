@@ -1,4 +1,4 @@
-import { OrderByEnum } from '../enums';
+import { EverestOrderByEnum } from '../enums';
 import {
   IEverestMission,
   IEverestMissionCustomInfos,
@@ -76,10 +76,10 @@ export interface IEverestGetMissionsInput {
   order_by?: keyof IEverestMission;
   /**
    *
-   * @type {OrderByEnum}
+   * @type {EverestOrderByEnum}
    * @memberof IEverestGetMissionsInput
    */
-  order_by_order?: OrderByEnum;
+  order_by_order?: EverestOrderByEnum;
 }
 
 /**

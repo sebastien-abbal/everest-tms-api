@@ -39,10 +39,10 @@ This all package is based on the [Everest API documentation](https://sandbox.eve
 | Missions routes | ✅ |
 | Clients routes | ✅ |
 | Agents routes | ✅ |
-| Invoices routes | ❌ |
-| Contacts routes | ❌ |
+| Invoices routes | ✅ |
+| Contacts routes | ✅ |
 | Models | ✅ |
-| Webhooks | ❌ |
+| Webhooks | ✅ |
 
 ---
 
@@ -93,6 +93,30 @@ await api.createAgent({
     password_repeat: "#abcdefg&123456789!",
     address_line1: '1 Example road, London, UK',
 })
+```
+
+#### Webhooks
+
+For `Hooks`, types has been created based on the [Everest API documentation](https://sandbox.everst.io/api/documentation?full=true), you can import them from the library like this:
+
+```typescript
+import { IEverestMissionDispatchedHook } from 'everest-tms-api';
+```
+
+> ⚠️ `WARNING: BE CAREFUL ENUMS FROM STATUS / TYPES!`. Some values like status or types are not based on enums defined in the queries/mutations typed in this library due to default API REST from Everest. You can use the index enum if you want to avoid that (like the example below).
+
+```typescript
+import {
+  IEverestInvoiceCreatedHook,
+  EverestInvoiceTypeEnum,
+} from 'everest-tms-api';
+
+const result = '{from webhook [invoice_created]}';
+const invoice = result.invoice as IEverestInvoiceCreatedHook;
+const type = result.type; // In this example, type is equal to 1 (INVOICE)
+return Object.values(EverestInvoiceTypeEnum)[
+  result.type
+] as EverestInvoiceTypeEnum;
 ```
 
 ---

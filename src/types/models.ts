@@ -910,10 +910,10 @@ export interface IEverestMission {
   note?: number;
   /**
    * List of images associated with the mission (photos and signature)
-   * @type {Array<IEverestMissionMedias>}
+   * @type {Array<IEverestMissionMedia>}
    * @memberof IEverestMission
    */
-  medias?: Array<IEverestMissionMedias>;
+  medias?: Array<IEverestMissionMedia>;
   /**
    * Price of the mission excluding taxes
    * @type {number}
@@ -1055,37 +1055,37 @@ export interface IEverestMissionFiles {
 /**
  *
  * @export
- * @interface IEverestMissionMedias
+ * @interface IEverestMissionMedia
  */
-export interface IEverestMissionMedias {
+export interface IEverestMissionMedia {
   /**
    *
    * @type {string}
-   * @memberof IEverestMissionMedias
+   * @memberof IEverestMissionMedia
    */
   src?: string;
   /**
    *
    * @type {string}
-   * @memberof IEverestMissionMedias
+   * @memberof IEverestMissionMedia
    */
   lat?: string;
   /**
    *
    * @type {string}
-   * @memberof IEverestMissionMedias
+   * @memberof IEverestMissionMedia
    */
   lng?: string;
   /**
    *
    * @type {string}
-   * @memberof IEverestMissionMedias
+   * @memberof IEverestMissionMedia
    */
   comment?: string;
   /**
    *
    * @type {string}
-   * @memberof IEverestMissionMedias
+   * @memberof IEverestMissionMedia
    */
   type?: string;
 }

@@ -1,7 +1,7 @@
 import { config as dotenvConfig } from 'dotenv';
 import { EverestApi } from '../services/everest-api';
 import { SERVICE_1_ID } from '../tests/config/constants';
-import { OrderByEnum } from '../types/enums';
+import { EverestOrderByEnum } from '../types/enums';
 
 dotenvConfig();
 
@@ -231,7 +231,7 @@ describe('Everest service - Mission', () => {
       return authenticatedEverestApi
         .getMissions({
           order_by: 'service',
-          order_by_order: OrderByEnum.DESC,
+          order_by_order: EverestOrderByEnum.DESC,
           date_between_start: new Date(`${new Date().getFullYear() - 1}-01-01`),
           date_between_end: new Date(`${new Date().getFullYear() + 1}-01-01`),
         })

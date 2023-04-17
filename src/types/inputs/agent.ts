@@ -1,4 +1,4 @@
-import { AgentStatusEnum } from '../enums';
+import { EverestAgentStatusEnum } from '../enums';
 
 /**
  *
@@ -156,10 +156,10 @@ export interface IEverestCreateAgentInput {
   available?: boolean;
   /**
    *
-   * @type {AgentStatusEnum}
+   * @type {EverestAgentStatusEnum}
    * @memberof IEverestCreateAgentInput
    */
-  status?: AgentStatusEnum;
+  status?: EverestAgentStatusEnum;
   /**
    *
    * @type {number}
@@ -290,10 +290,10 @@ export interface IEverestUpdateAgentInput {
   available?: boolean;
   /**
    *
-   * @type {AgentStatusEnum}
+   * @type {EverestAgentStatusEnum}
    * @memberof IEverestCreateAgentInput
    */
-  status?: AgentStatusEnum;
+  status?: EverestAgentStatusEnum;
   /**
    *
    * @type {number}

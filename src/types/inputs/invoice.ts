@@ -1,7 +1,7 @@
 import {
-  InvoiceStatusnEnum,
-  InvoiceTypeEnum,
-  InvoiceValidationEnum,
+  EverestInvoiceStatusnEnum,
+  EverestInvoiceTypeEnum,
+  EverestInvoiceValidationEnum,
 } from '../enums';
 
 /**
@@ -52,10 +52,10 @@ export interface IEverestGetInvoicesInput {
 export interface IEverestCreateInvoiceInput {
   /**
    *
-   * @type {InvoiceTypeEnum}
+   * @type {EverestInvoiceTypeEnum}
    * @memberof IEverestCreateInvoiceInput
    */
-  type: InvoiceTypeEnum;
+  type: EverestInvoiceTypeEnum;
   /**
    *
    * @type {string}
@@ -106,16 +106,16 @@ export interface IEverestCreateInvoiceInput {
   created_by?: string;
   /**
    *
-   * @type {InvoiceValidationEnum}
+   * @type {EverestInvoiceValidationEnum}
    * @memberof IEverestCreateInvoiceInput
    */
-  validated?: InvoiceValidationEnum;
+  validated?: EverestInvoiceValidationEnum;
   /**
    *
-   * @type {InvoiceStatusnEnum}
+   * @type {EverestInvoiceStatusnEnum}
    * @memberof IEverestCreateInvoiceInput
    */
-  status?: InvoiceStatusnEnum;
+  status?: EverestInvoiceStatusnEnum;
   /**
    *
    * @type {Array<string>}
@@ -144,10 +144,10 @@ export interface IEverestUpdateInvoiceInput {
   id: number;
   /**
    *
-   * @type {InvoiceTypeEnum}
+   * @type {EverestInvoiceTypeEnum}
    * @memberof IEverestCreateInvoiceInput
    */
-  type?: InvoiceTypeEnum;
+  type?: EverestInvoiceTypeEnum;
   /**
    *
    * @type {string}
@@ -198,16 +198,16 @@ export interface IEverestUpdateInvoiceInput {
   created_by?: string;
   /**
    *
-   * @type {InvoiceValidationEnum}
+   * @type {EverestInvoiceValidationEnum}
    * @memberof IEverestCreateInvoiceInput
    */
-  validated?: InvoiceValidationEnum;
+  validated?: EverestInvoiceValidationEnum;
   /**
    *
-   * @type {InvoiceStatusnEnum}
+   * @type {EverestInvoiceStatusnEnum}
    * @memberof IEverestCreateInvoiceInput
    */
-  status?: InvoiceStatusnEnum;
+  status?: EverestInvoiceStatusnEnum;
   /**
    *
    * @type {Array<string>}

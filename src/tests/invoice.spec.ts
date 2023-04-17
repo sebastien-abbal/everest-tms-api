@@ -1,6 +1,6 @@
 import { config as dotenvConfig } from 'dotenv';
 import { EverestApi } from '../services/everest-api';
-import { InvoiceTypeEnum } from '../types';
+import { EverestInvoiceTypeEnum } from '../types';
 
 dotenvConfig();
 
@@ -25,7 +25,7 @@ describe('Everest service - Invoice', () => {
     it('should return a invoice created', async () => {
       return authenticatedEverestApi
         .createInvoice({
-          type: InvoiceTypeEnum.invoice,
+          type: EverestInvoiceTypeEnum.invoice,
           title: 'Invoice n°1',
           description: 'Description test',
           name_or_company: 'Test Corp.',

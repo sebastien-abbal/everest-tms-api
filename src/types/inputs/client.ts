@@ -1,4 +1,4 @@
-import { ClientStatusEnum } from '../enums';
+import { EverestClientStatusEnum } from '../enums';
 import { IEverestClientCustomInfos } from '../models';
 
 /**
@@ -163,10 +163,10 @@ export interface IEverestCreateClientInput {
   custom_infos?: IEverestClientCustomInfos[];
   /**
    *
-   * @type {ClientStatusEnum}
+   * @type {EverestClientStatusEnum}
    * @memberof IEverestCreateClientInput
    */
-  status?: ClientStatusEnum;
+  status?: EverestClientStatusEnum;
   /**
    *
    * @type {number}
@@ -303,10 +303,10 @@ export interface IEverestUpdateClientInput {
   custom_infos?: IEverestClientCustomInfos[];
   /**
    *
-   * @type {ClientStatusEnum}
+   * @type {EverestClientStatusEnum}
    * @memberof IEverestUpdateClientInput
    */
-  status?: ClientStatusEnum;
+  status?: EverestClientStatusEnum;
   /**
    *
    * @type {number}
