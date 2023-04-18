@@ -120,16 +120,16 @@ export interface IEverestCreateMissionInput {
   service_id: number;
   /**
    *
-   * @type {string}
+   * @type {number}
    * @memberof IEverestCreateMissionInput
    */
-  agent_id?: string;
+  agent_id?: number;
   /**
    *
-   * @type {string}
+   * @type {number}
    * @memberof IEverestCreateMissionInput
    */
-  client_id?: string;
+  client_id?: number;
   /**
    *
    * @type {string}
@@ -234,10 +234,10 @@ export interface IEverestCreateMissionInput {
   additionals?: Array<string>;
   /**
    *
-   * @type {string}
+   * @type {number}
    * @memberof IEverestCreateMissionInput
    */
-  establishment_id?: string;
+  establishment_id?: number;
   /**
    *
    * @type {MissionFiles[]}
@@ -308,16 +308,16 @@ export interface IEverestUpdateMissionInput {
   service_id: number;
   /**
    *
-   * @type {string}
+   * @type {number}
    * @memberof IEverestUpdateMissionInput
    */
-  agent_id?: string;
+  agent_id?: number;
   /**
    *
-   * @type {string}
+   * @type {number}
    * @memberof IEverestUpdateMissionInput
    */
-  client_id?: string;
+  client_id?: number;
   /**
    *
    * @type {string}
@@ -422,10 +422,10 @@ export interface IEverestUpdateMissionInput {
   additionals?: Array<string>;
   /**
    *
-   * @type {string}
+   * @type {number}
    * @memberof IEverestUpdateMissionInput
    */
-  establishment_id?: string;
+  establishment_id?: number;
   /**
    *
    * @type {MissionFiles[]}
