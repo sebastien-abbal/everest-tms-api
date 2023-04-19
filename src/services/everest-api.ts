@@ -151,10 +151,10 @@ export class EverestApi {
         data: {
           ...input,
           date_between_start: input.date_between_start
-            ? input.date_between_start.getTime()
+            ? new Date(input.date_between_start).getTime()
             : undefined,
           date_between_end: input.date_between_end
-            ? input.date_between_end.getTime()
+            ? new Date(input.date_between_end).getTime()
             : undefined,
         },
       });
@@ -184,7 +184,9 @@ export class EverestApi {
       const result = await instance.get(EverestRoutesEnum.IS_HANDLED_ADDRESS, {
         data: {
           ...input,
-          start_date: input.start_date ? input.start_date.getTime() : undefined,
+          start_date: input.start_date
+            ? new Date(input.start_date).getTime()
+            : undefined,
         },
       });
       return result.data;
@@ -201,7 +203,9 @@ export class EverestApi {
     try {
       const result = await instance.post(EverestRoutesEnum.ESTIMATE_MISSION, {
         ...input,
-        start_date: input.start_date ? input.start_date.getTime() : undefined,
+        start_date: input.start_date
+          ? new Date(input.start_date).getTime()
+          : undefined,
       });
       return result.data;
     } catch (err) {
@@ -217,7 +221,9 @@ export class EverestApi {
     try {
       const result = await instance.post(EverestRoutesEnum.CREATE_MISSION, {
         ...input,
-        start_date: input.start_date ? input.start_date.getTime() : undefined,
+        start_date: input.start_date
+          ? new Date(input.start_date).getTime()
+          : undefined,
       });
       return result.data;
     } catch (err) {
@@ -233,7 +239,9 @@ export class EverestApi {
     try {
       const result = await instance.put(EverestRoutesEnum.UPDATE_MISSION, {
         ...input,
-        start_date: input.start_date ? input.start_date.getTime() : undefined,
+        start_date: input.start_date
+          ? new Date(input.start_date).getTime()
+          : undefined,
       });
       return result.data;
     } catch (err) {
