@@ -45,7 +45,7 @@ describe('Everest service - Client', () => {
 
     it('should return a failed client creation because of missing tel', async () => {
       const password = uuid();
-      return (
+      await expect(
         authenticatedEverestApi
           // @ts-ignore: Force missing telephone
           .createClient({
@@ -54,11 +54,8 @@ describe('Everest service - Client', () => {
             last_name: 'LEFEBVRE',
             password,
             password_repeat: password,
-          })
-          .then((res) => {
-            expect(res).toHaveProperty('error');
-          })
-      );
+          }),
+      ).rejects.toThrow(Error);
     });
   });
 
@@ -75,13 +72,11 @@ describe('Everest service - Client', () => {
     });
 
     it('should not return a client because of wrong client id', async () => {
-      return authenticatedEverestApi
-        .getClient({
+      await expect(
+        authenticatedEverestApi.getClient({
           id: -1,
-        })
-        .then((res) => {
-          expect(res).toHaveProperty('error');
-        });
+        }),
+      ).rejects.toThrow(Error);
     });
   });
 
@@ -101,9 +96,7 @@ describe('Everest service - Client', () => {
     });
 
     it('should return a failed clients authentication', async () => {
-      return erroredEverestApi.getClients().then((res) => {
-        expect(res).toHaveProperty('error');
-      });
+      await expect(erroredEverestApi.getClients()).rejects.toThrow(Error);
     });
   });
 
@@ -122,13 +115,11 @@ describe('Everest service - Client', () => {
     });
 
     it('should return a failed client update with wrong id', async () => {
-      return authenticatedEverestApi
-        .updateClient({
+      await expect(
+        authenticatedEverestApi.updateClient({
           id: -1,
-        })
-        .then((res) => {
-          expect(res).toHaveProperty('error');
-        });
+        }),
+      ).rejects.toThrow(Error);
     });
   });
 
@@ -144,13 +135,11 @@ describe('Everest service - Client', () => {
     });
 
     it('should return a failed client deletion with wrong id', async () => {
-      return authenticatedEverestApi
-        .deleteClient({
+      await expect(
+        authenticatedEverestApi.deleteClient({
           id: -1,
-        })
-        .then((res) => {
-          expect(res).toHaveProperty('error');
-        });
+        }),
+      ).rejects.toThrow(Error);
     });
   });
 });

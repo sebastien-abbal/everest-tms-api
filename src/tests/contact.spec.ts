@@ -41,18 +41,14 @@ describe('Everest service - Contact', () => {
     });
 
     it('should return a failed contact creation because of missing email', async () => {
-      const password = uuid();
-      return (
+      await expect(
         authenticatedEverestApi
           // @ts-ignore: Force missing email
           .createContact({
             first_name: 'Léon',
             last_name: 'LEFEBVRE',
-          })
-          .then((res) => {
-            expect(res).toHaveProperty('error');
-          })
-      );
+          }),
+      ).rejects.toThrow(Error);
     });
   });
 
@@ -69,13 +65,11 @@ describe('Everest service - Contact', () => {
     });
 
     it('should not return a contact because of wrong contact id', async () => {
-      return authenticatedEverestApi
-        .getContact({
+      await expect(
+        authenticatedEverestApi.getContact({
           id: -1,
-        })
-        .then((res) => {
-          expect(res).toHaveProperty('error');
-        });
+        }),
+      ).rejects.toThrow(Error);
     });
   });
 
@@ -95,9 +89,7 @@ describe('Everest service - Contact', () => {
     });
 
     it('should return a failed contacts authentication', async () => {
-      return erroredEverestApi.getContacts().then((res) => {
-        expect(res).toHaveProperty('error');
-      });
+      await expect(erroredEverestApi.getContacts()).rejects.toThrow(Error);
     });
   });
 
@@ -116,13 +108,11 @@ describe('Everest service - Contact', () => {
     });
 
     it('should return a failed contact update with wrong id', async () => {
-      return authenticatedEverestApi
-        .updateContact({
+      await expect(
+        authenticatedEverestApi.updateContact({
           id: -1,
-        })
-        .then((res) => {
-          expect(res).toHaveProperty('error');
-        });
+        }),
+      ).rejects.toThrow(Error);
     });
   });
 
@@ -138,13 +128,11 @@ describe('Everest service - Contact', () => {
     });
 
     it('should return a failed contact deletion with wrong id', async () => {
-      return authenticatedEverestApi
-        .deleteContact({
+      await expect(
+        authenticatedEverestApi.deleteContact({
           id: -1,
-        })
-        .then((res) => {
-          expect(res).toHaveProperty('error');
-        });
+        }),
+      ).rejects.toThrow(Error);
     });
   });
 });

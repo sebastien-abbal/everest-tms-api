@@ -27,9 +27,7 @@ describe('Everest service - General', () => {
     });
 
     it('should return a failed authentication with wrong client_id', async () => {
-      await erroredEverestApi.authenticate().then((res) => {
-        expect(res).toHaveProperty('error');
-      });
+      await expect(erroredEverestApi.authenticate()).rejects.toThrow(Error);
     });
   });
 
@@ -53,9 +51,7 @@ describe('Everest service - General', () => {
     });
 
     it('should return a failed authentication', async () => {
-      return erroredEverestApi.getInfos().then((res) => {
-        expect(res).toHaveProperty('error');
-      });
+      await expect(erroredEverestApi.getInfos()).rejects.toThrow(Error);
     });
   });
 
@@ -74,9 +70,9 @@ describe('Everest service - General', () => {
     });
 
     it('should return a failed authentication', async () => {
-      return erroredEverestApi.getAvailabilities().then((res) => {
-        expect(res).toHaveProperty('error');
-      });
+      await expect(erroredEverestApi.getAvailabilities()).rejects.toThrow(
+        Error,
+      );
     });
   });
 });

@@ -44,19 +44,16 @@ describe('Everest service - Agent', () => {
     });
 
     it('should return a failed agent creation because of missing password', async () => {
-      const password = uuid();
-      return (
+      await expect(
         authenticatedEverestApi
-          // @ts-ignore: Force missing telephone
+          // @ts-ignore: Force missing password
           .createAgent({
+            address_line1: '3 rue Dufour, Paris, France',
             email: `${uuid()}@test.fr`,
             first_name: 'Léon',
             last_name: 'LEFEBVRE',
-          })
-          .then((res) => {
-            expect(res).toHaveProperty('error');
-          })
-      );
+          }),
+      ).rejects.toThrow(Error);
     });
   });
 
@@ -71,13 +68,11 @@ describe('Everest service - Agent', () => {
     });
 
     it('should not return an agent because of wrong agent id', async () => {
-      return authenticatedEverestApi
-        .getAgent({
+      await expect(
+        authenticatedEverestApi.getAgent({
           id: -1,
-        })
-        .then((res) => {
-          expect(res).toHaveProperty('error');
-        });
+        }),
+      ).rejects.toThrow(Error);
     });
   });
 
@@ -97,9 +92,7 @@ describe('Everest service - Agent', () => {
     });
 
     it('should return a failed agents authentication', async () => {
-      return erroredEverestApi.getAgents().then((res) => {
-        expect(res).toHaveProperty('error');
-      });
+      await expect(erroredEverestApi.getAgents()).rejects.toThrow(Error);
     });
   });
 
@@ -121,13 +114,11 @@ describe('Everest service - Agent', () => {
     });
 
     it('should return a failed agent update with wrong id', async () => {
-      return authenticatedEverestApi
-        .updateAgent({
+      await expect(
+        authenticatedEverestApi.updateAgent({
           id: -1,
-        })
-        .then((res) => {
-          expect(res).toHaveProperty('error');
-        });
+        }),
+      ).rejects.toThrow(Error);
     });
   });
 
@@ -143,13 +134,11 @@ describe('Everest service - Agent', () => {
     });
 
     it('should return a failed agent deletion with wrong id', async () => {
-      return authenticatedEverestApi
-        .deleteAgent({
+      await expect(
+        authenticatedEverestApi.deleteAgent({
           id: -1,
-        })
-        .then((res) => {
-          expect(res).toHaveProperty('error');
-        });
+        }),
+      ).rejects.toThrow(Error);
     });
   });
 });

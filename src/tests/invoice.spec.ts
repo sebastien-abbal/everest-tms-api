@@ -47,7 +47,7 @@ describe('Everest service - Invoice', () => {
     });
 
     it('should return a failed invoice creation because of missing password', async () => {
-      return (
+      await expect(
         authenticatedEverestApi
           // @ts-ignore: Force missing inputs
           .createInvoice({
@@ -55,11 +55,8 @@ describe('Everest service - Invoice', () => {
             description: 'Description test',
             name_or_company: 'Test Corp.',
             created_for: 1,
-          })
-          .then((res) => {
-            expect(res).toHaveProperty('error');
-          })
-      );
+          }),
+      ).rejects.toThrow(Error);
     });
   });
 
@@ -76,13 +73,11 @@ describe('Everest service - Invoice', () => {
     });
 
     it('should not return a invoice because of wrong invoice id', async () => {
-      return authenticatedEverestApi
-        .getInvoice({
+      await expect(
+        authenticatedEverestApi.getInvoice({
           id: -1,
-        })
-        .then((res) => {
-          expect(res).toHaveProperty('error');
-        });
+        }),
+      ).rejects.toThrow(Error);
     });
   });
 
@@ -102,9 +97,7 @@ describe('Everest service - Invoice', () => {
     });
 
     it('should return a failed invoices authentication', async () => {
-      return erroredEverestApi.getInvoices().then((res) => {
-        expect(res).toHaveProperty('error');
-      });
+      await expect(erroredEverestApi.getInvoices()).rejects.toThrow(Error);
     });
   });
 
@@ -126,13 +119,11 @@ describe('Everest service - Invoice', () => {
     });
 
     it('should return a failed invoice update with wrong id', async () => {
-      return authenticatedEverestApi
-        .updateInvoice({
+      await expect(
+        authenticatedEverestApi.updateInvoice({
           id: -1,
-        })
-        .then((res) => {
-          expect(res).toHaveProperty('error');
-        });
+        }),
+      ).rejects.toThrow(Error);
     });
   });
 
@@ -148,13 +139,11 @@ describe('Everest service - Invoice', () => {
     });
 
     it('should return a failed invoice deletion with wrong id', async () => {
-      return authenticatedEverestApi
-        .deleteInvoice({
+      await expect(
+        authenticatedEverestApi.deleteInvoice({
           id: -1,
-        })
-        .then((res) => {
-          expect(res).toHaveProperty('error');
-        });
+        }),
+      ).rejects.toThrow(Error);
     });
   });
 });

@@ -37,15 +37,13 @@ describe('Everest service - Mission', () => {
     });
 
     it('should return a failed response because of authentication', async () => {
-      return erroredEverestApi
-        .getIsHandledAddress({
+      await expect(
+        erroredEverestApi.getIsHandledAddress({
           address: ADDRESS_START,
           start_date: START_DATE,
           service_id: SERVICE_1_ID,
-        })
-        .then((res) => {
-          expect(res).toHaveProperty('error');
-        });
+        }),
+      ).rejects.toThrow(Error);
     });
   });
 
@@ -58,9 +56,9 @@ describe('Everest service - Mission', () => {
     });
 
     it('should return a failed statuses authentication', async () => {
-      return erroredEverestApi.getMissionStatuses().then((res) => {
-        expect(res).toHaveProperty('error');
-      });
+      await expect(erroredEverestApi.getMissionStatuses()).rejects.toThrow(
+        Error,
+      );
     });
   });
 
@@ -84,15 +82,13 @@ describe('Everest service - Mission', () => {
     });
 
     it('should return a failed mission estimation with wrong service_id', async () => {
-      return authenticatedEverestApi
-        .estimateMission({
+      await expect(
+        authenticatedEverestApi.estimateMission({
           service_id: -1,
           address_start: ADDRESS_START,
           address_end: ADDRESS_END,
-        })
-        .then((res) => {
-          expect(res).toHaveProperty('error');
-        });
+        }),
+      ).rejects.toThrow(Error);
     });
   });
 
@@ -191,15 +187,13 @@ describe('Everest service - Mission', () => {
     });
 
     it('should return a failed mission creation with wrong service_id', async () => {
-      return authenticatedEverestApi
-        .createMission({
+      await expect(
+        authenticatedEverestApi.createMission({
           service_id: -1,
           address_start: ADDRESS_START,
           address_end: ADDRESS_END,
-        })
-        .then((res) => {
-          expect(res).toHaveProperty('error');
-        });
+        }),
+      ).rejects.toThrow(Error);
     });
   });
 
@@ -216,13 +210,11 @@ describe('Everest service - Mission', () => {
     });
 
     it('should not return a mission because of wrong mission ref', async () => {
-      return authenticatedEverestApi
-        .getMission({
+      await expect(
+        authenticatedEverestApi.getMission({
           ref: '',
-        })
-        .then((res) => {
-          expect(res).toHaveProperty('error');
-        });
+        }),
+      ).rejects.toThrow(Error);
     });
   });
 
@@ -251,11 +243,9 @@ describe('Everest service - Mission', () => {
     });
 
     it('should return a failed missions authentication', async () => {
-      return erroredEverestApi
-        .getMissions({ order_by: 'service', service: -1 })
-        .then((res) => {
-          expect(res).toHaveProperty('error');
-        });
+      await expect(
+        erroredEverestApi.getMissions({ order_by: 'service', service: -1 }),
+      ).rejects.toThrow(Error);
     });
   });
 
@@ -284,16 +274,14 @@ describe('Everest service - Mission', () => {
     });
 
     it('should return a failed mission update with wrong service_id', async () => {
-      return authenticatedEverestApi
-        .updateMission({
+      await expect(
+        authenticatedEverestApi.updateMission({
           ref: mission_ref,
           service_id: -1,
           address_start_name: ADDRESS_START_NAME,
           address_end_name: ADDRESS_END_NAME,
-        })
-        .then((res) => {
-          expect(res).toHaveProperty('error');
-        });
+        }),
+      ).rejects.toThrow(Error);
     });
   });
 
@@ -314,14 +302,12 @@ describe('Everest service - Mission', () => {
     });
 
     it('should return a failed mission update status with wrong ref', async () => {
-      return authenticatedEverestApi
-        .updateMissionStatus({
+      await expect(
+        authenticatedEverestApi.updateMissionStatus({
           ref: 'wrong-ref',
           status: 'livr',
-        })
-        .then((res) => {
-          expect(res).toHaveProperty('error');
-        });
+        }),
+      ).rejects.toThrow(Error);
     });
   });
 
@@ -340,13 +326,11 @@ describe('Everest service - Mission', () => {
     });
 
     it('should return a failed mission cancelation with wrong ref', async () => {
-      return authenticatedEverestApi
-        .cancelMission({
+      await expect(
+        authenticatedEverestApi.cancelMission({
           ref: 'wrong-ref',
-        })
-        .then((res) => {
-          expect(res).toHaveProperty('error');
-        });
+        }),
+      ).rejects.toThrow(Error);
     });
   });
 
@@ -362,13 +346,11 @@ describe('Everest service - Mission', () => {
     });
 
     it('should return a failed mission deletion with wrong ref', async () => {
-      return authenticatedEverestApi
-        .deleteMission({
+      await expect(
+        authenticatedEverestApi.deleteMission({
           ref: 'wrong-ref',
-        })
-        .then((res) => {
-          expect(res).toHaveProperty('error');
-        });
+        }),
+      ).rejects.toThrow(Error);
     });
   });
 });
