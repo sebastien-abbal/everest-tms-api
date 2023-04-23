@@ -1319,3 +1319,263 @@ export interface IEverestServiceAvailability {
    */
   ranges: [string, string];
 }
+
+/**
+ *
+ * @export
+ * @interface IEverestService
+ */
+export interface IEverestService {
+  /**
+   *
+   * @type {number}
+   * @memberof IEverestService
+   */
+  id: number;
+  /**
+   *
+   * @type {string}
+   * @memberof IEverestService
+   */
+  name: string;
+  /**
+   *
+   * @type {string}
+   * @memberof IEverestService
+   */
+  description: string;
+  /**
+   *
+   * @type {string}
+   * @memberof IEverestService
+   */
+  color: string;
+  // /**
+  //  *
+  //  * @type {string}
+  //  * @memberof IEverestService
+  //  */
+  // icon: string;
+  /**
+   *
+   * @type {number}
+   * @memberof IEverestService
+   */
+  delay: number;
+  /**
+   *
+   * @type {number}
+   * @memberof IEverestService
+   */
+  notice_delay: number;
+  /**
+   *
+   * @type {number}
+   * @memberof IEverestService
+   */
+  handling_time: number;
+  /**
+   *
+   * @type {number}
+   * @memberof IEverestService
+   */
+  setup_time: number;
+  /**
+   *
+   * @type {number}
+   * @memberof IEverestService
+   */
+  tolerance_time: number;
+  /**
+   *
+   * @type {string[]}
+   * @memberof IEverestService
+   */
+  allowed_statuses: string[];
+  /**
+   *
+   * @type {number[]}
+   * @memberof IEverestService
+   */
+  allowed_vehicles: number[];
+  /**
+   *
+   * @type {boolean}
+   * @memberof IEverestService
+   */
+  ignore_optim_start: boolean;
+  /**
+   *
+   * @type {boolean}
+   * @memberof IEverestService
+   */
+  ignore_optim_end: boolean;
+  /**
+   *
+   * @type {boolean}
+   * @memberof IEverestService
+   */
+  is_flat_price: boolean;
+  /**
+   *
+   * @type {string}
+   * @memberof IEverestService
+   */
+  additional_services: IEverestAdditionalService[];
+  /**
+   *
+   * @type {number}
+   * @memberof IEverestService
+   */
+  vat_percent: number;
+}
+
+/**
+ *
+ * @export
+ * @interface IEverestAdditionalService
+ */
+export interface IEverestAdditionalService {
+  /**
+   *
+   * @type {string}
+   * @memberof IEverestAdditionalService
+   */
+  name: string;
+  /**
+   *
+   * @type {number}
+   * @memberof IEverestAdditionalService
+   */
+  price: number;
+}
+
+/**
+ *
+ * @export
+ * @interface IEverestVehicleType
+ */
+export interface IEverestVehicleType {
+  /**
+   *
+   * @type {number}
+   * @memberof IEverestVehicleType
+   */
+  id: number;
+  /**
+   *
+   * @type {string}
+   * @memberof IEverestVehicleType
+   */
+  name: string;
+  /**
+   *
+   * @type {number}
+   * @memberof IEverestVehicleType
+   */
+  type: number;
+  /**
+   *
+   * @type {number}
+   * @memberof IEverestVehicleType
+   */
+  engine: number;
+  /**
+   *
+   * @type {number}
+   * @memberof IEverestVehicleType
+   */
+  length: number;
+  /**
+   *
+   * @type {number}
+   * @memberof IEverestVehicleType
+   */
+  width: number;
+  /**
+   *
+   * @type {number}
+   * @memberof IEverestVehicleType
+   */
+  depth: number;
+  /**
+   *
+   * @type {number}
+   * @memberof IEverestVehicleType
+   */
+  max_weight: number;
+  /**
+   *
+   * @type {number}
+   * @memberof IEverestVehicleType
+   */
+  capacity: number;
+  /**
+   *
+   * @type {number}
+   * @memberof IEverestVehicleType
+   */
+  max_tasks: number;
+  /**
+   *
+   * @type {number}
+   * @memberof IEverestVehicleType
+   */
+  cost_per_day: number;
+  /**
+   *
+   * @type {number}
+   * @memberof IEverestVehicleType
+   */
+  cost_per_km: number;
+  /**
+   *
+   * @type {number}
+   * @memberof IEverestVehicleType
+   */
+  speed_factor: number;
+  /**
+   *
+   * @type {number[]}
+   * @memberof IEverestVehicleType
+   */
+  skills: number[];
+}
+
+/**
+ *
+ * @export
+ * @interface IEverestAreaOfService
+ */
+export interface IEverestAreaOfService {
+  /**
+   *
+   * @type {string}
+   * @memberof IEverestAreaOfService
+   */
+  id: string;
+  /**
+   *
+   * @type {string}
+   * @memberof IEverestAreaOfService
+   */
+  name: string;
+  /**
+   *
+   * @type {string}
+   * @memberof IEverestAreaOfService
+   */
+  type: string;
+  // /**
+  //  *
+  //  * @type {string}
+  //  * @memberof IEverestAreaOfService
+  //  */
+  // country: string;
+  /**
+   *
+   * @type {string}
+   * @memberof IEverestAreaOfService
+   */
+  areas: string;
+}

@@ -4,6 +4,9 @@ export enum EverestRoutesEnum {
   INFOS = '/infos',
   ME = '/me',
   AVAILABILITIES = '/availabilities',
+  SERVICES = '/services',
+  VEHICLE_TYPES = '/vehicle-types',
+  AREAS_OF_SERVICE = '/areas-of-service',
 
   // Missions
   IS_HANDLED_ADDRESS = '/is-handled-address',

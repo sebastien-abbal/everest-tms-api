@@ -3,6 +3,7 @@ import {
   EverestRoutesEnum,
   IEverestAgentResponse,
   IEverestAgentsResponse,
+  IEverestAreasOfServiceResponse,
   IEverestAuthenticateResponse,
   IEverestAvailabilitiesResponse,
   IEverestCancelMissionInput,
@@ -40,6 +41,7 @@ import {
   IEverestIsHandledAddressInput,
   IEverestMissionResponse,
   IEverestMissionsResponse,
+  IEverestServicesResponse,
   IEverestStatusesResponse,
   IEverestUpdateAgentInput,
   IEverestUpdateClientInput,
@@ -47,6 +49,7 @@ import {
   IEverestUpdateInvoiceInput,
   IEverestUpdateMissionInput,
   IEverestUpdateMissionStatusInput,
+  IEverestVehicleTypesResponse,
 } from '..';
 import { config } from '../config';
 
@@ -112,6 +115,40 @@ export class EverestApi {
       throw new Error(err.response.data.error);
     }
   };
+
+  public getServices = async (): Promise<IEverestServicesResponse> => {
+    const instance = this.createInstance(this.authToken);
+
+    try {
+      const result = await instance.get(EverestRoutesEnum.SERVICES);
+      return result.data;
+    } catch (err) {
+      throw new Error(err.response.data.error);
+    }
+  };
+
+  public getVehicleTypes = async (): Promise<IEverestVehicleTypesResponse> => {
+    const instance = this.createInstance(this.authToken);
+
+    try {
+      const result = await instance.get(EverestRoutesEnum.VEHICLE_TYPES);
+      return result.data;
+    } catch (err) {
+      throw new Error(err.response.data.error);
+    }
+  };
+
+  public getAreasOfService =
+    async (): Promise<IEverestAreasOfServiceResponse> => {
+      const instance = this.createInstance(this.authToken);
+
+      try {
+        const result = await instance.get(EverestRoutesEnum.AREAS_OF_SERVICE);
+        return result.data;
+      } catch (err) {
+        throw new Error(err.response.data.error);
+      }
+    };
 
   public getAvailabilities =
     async (): Promise<IEverestAvailabilitiesResponse> => {

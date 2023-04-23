@@ -17,3 +17,45 @@ export interface IEverestAuthenticateInput {
    */
   client_secret: string;
 }
+
+/**
+ *
+ * @export
+ * @interface IEverestAvailabilitiesInput
+ */
+export interface IEverestAvailabilitiesInput {
+  /**
+   *
+   * @type {string}
+   * @memberof IEverestAvailabilitiesInput
+   */
+  establishment_id: string;
+}
+
+/**
+ *
+ * @export
+ * @interface IEverestServicesInput
+ */
+export interface IEverestServicesInput {
+  /**
+   *
+   * @type {string}
+   * @memberof IEverestServicesInput
+   */
+  establishment_id: string;
+}
+
+/**
+ *
+ * @export
+ * @interface IEverestAreaOfServiceInput
+ */
+export interface IEverestAreaOfServiceInput {
+  /**
+   *
+   * @type {string}
+   * @memberof IEverestAreaOfServiceInput
+   */
+  establishment_id: string;
+}

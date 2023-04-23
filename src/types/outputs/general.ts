@@ -1,4 +1,10 @@
-import { IEverestPlatform, IEverestServiceAvailability } from '../models';
+import {
+  IEverestAreaOfService,
+  IEverestPlatform,
+  IEverestService,
+  IEverestServiceAvailability,
+  IEverestVehicleType,
+} from '../models';
 
 /**
  *
@@ -70,4 +76,64 @@ export interface IEverestAvailabilitiesResponse {
   } & {
     [key: string]: IEverestServiceAvailability;
   };
+}
+
+/**
+ *
+ * @export
+ * @interface IEverestServicesResponse
+ */
+export interface IEverestServicesResponse {
+  /**
+   *
+   * @type {string}
+   * @memberof IEverestServicesResponse
+   */
+  success: boolean;
+  /**
+   *
+   * @type {IEverestService[]}
+   * @memberof IEverestServicesResponse
+   */
+  services: IEverestService[];
+}
+
+/**
+ *
+ * @export
+ * @interface IEverestVehicleTypesResponse
+ */
+export interface IEverestVehicleTypesResponse {
+  /**
+   *
+   * @type {string}
+   * @memberof IEverestVehicleTypesResponse
+   */
+  success: boolean;
+  /**
+   *
+   * @type {IEverestVehicleType[]}
+   * @memberof IEverestVehicleTypesResponse
+   */
+  vehicle_types: IEverestVehicleType[];
+}
+
+/**
+ *
+ * @export
+ * @interface IEverestAreasOfServiceResponse
+ */
+export interface IEverestAreasOfServiceResponse {
+  /**
+   *
+   * @type {string}
+   * @memberof IEverestAreasOfServiceResponse
+   */
+  success: boolean;
+  /**
+   *
+   * @type {IEverestAreaOfService[]}
+   * @memberof IEverestAreasOfServiceResponse
+   */
+  areas_of_service: IEverestAreaOfService[];
 }
