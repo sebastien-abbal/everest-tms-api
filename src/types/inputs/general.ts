@@ -29,7 +29,7 @@ export interface IEverestAvailabilitiesInput {
    * @type {string}
    * @memberof IEverestAvailabilitiesInput
    */
-  establishment_id: string;
+  establishment_id?: string;
 }
 
 /**
@@ -43,19 +43,19 @@ export interface IEverestServicesInput {
    * @type {string}
    * @memberof IEverestServicesInput
    */
-  establishment_id: string;
+  establishment_id?: string;
 }
 
 /**
  *
  * @export
- * @interface IEverestAreaOfServiceInput
+ * @interface IEverestAreasOfServiceInput
  */
-export interface IEverestAreaOfServiceInput {
+export interface IEverestAreasOfServiceInput {
   /**
    *
    * @type {string}
-   * @memberof IEverestAreaOfServiceInput
+   * @memberof IEverestAreasOfServiceInput
    */
-  establishment_id: string;
+  establishment_id?: string;
 }
