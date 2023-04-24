@@ -1,5 +1,5 @@
 import { HookEnum } from '../enums';
-import { IEverestMissionMedia } from '../models';
+import { IEverestMissionCustomInfos, IEverestMissionMedia } from '../models';
 
 export interface IEverestMissionCreatedHook {
   /**
@@ -218,6 +218,13 @@ export interface IEverestMissionCreatedHook {
    * @memberof IEverestMissionCreatedHook
    */
   date_created: number;
+
+  /**
+   *
+   * @type {MissionCustomInfos[]}
+   * @memberof IEverestCreateMissionInput
+   */
+  custom_infos?: IEverestMissionCustomInfos[];
 }
 
 export interface IEverestMissionUpdatedHook {
@@ -458,6 +465,13 @@ export interface IEverestMissionUpdatedHook {
    * @memberof IEverestMissionUpdatedHook
    */
   date_noted: number;
+
+  /**
+   *
+   * @type {MissionCustomInfos[]}
+   * @memberof IEverestCreateMissionInput
+   */
+  custom_infos?: IEverestMissionCustomInfos[];
 }
 
 export interface IEverestMissionPriceUpdatedHook {
@@ -698,6 +712,13 @@ export interface IEverestMissionPriceUpdatedHook {
    * @memberof IEverestMissionPriceUpdatedHook
    */
   date_noted: number;
+
+  /**
+   *
+   * @type {MissionCustomInfos[]}
+   * @memberof IEverestCreateMissionInput
+   */
+  custom_infos?: IEverestMissionCustomInfos[];
 }
 
 export interface IEverestMissionDeletedHook {
