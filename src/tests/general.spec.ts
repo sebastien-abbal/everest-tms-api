@@ -83,6 +83,7 @@ describe('Everest service - General', () => {
           id: expect.any(Number),
           name: expect.any(String),
           description: expect.any(String),
+          icon: expect.any(String),
           color: expect.any(String),
           delay: expect.any(Number),
           notice_delay: expect.any(Number),
@@ -140,6 +141,7 @@ describe('Everest service - General', () => {
           id: expect.any(String),
           name: expect.any(String),
           type: expect.any(String),
+          country: expect.any(String),
           areas: expect.any(String),
         });
       });

@@ -1350,12 +1350,12 @@ export interface IEverestService {
    * @memberof IEverestService
    */
   color: string;
-  // /**
-  //  *
-  //  * @type {string}
-  //  * @memberof IEverestService
-  //  */
-  // icon: string;
+  /**
+   *
+   * @type {string}
+   * @memberof IEverestService
+   */
+  icon: string;
   /**
    *
    * @type {number}
@@ -1566,12 +1566,12 @@ export interface IEverestAreaOfService {
    * @memberof IEverestAreaOfService
    */
   type: string;
-  // /**
-  //  *
-  //  * @type {string}
-  //  * @memberof IEverestAreaOfService
-  //  */
-  // country: string;
+  /**
+   *
+   * @type {string}
+   * @memberof IEverestAreaOfService
+   */
+  country: string;
   /**
    *
    * @type {string}
