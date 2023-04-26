@@ -103,7 +103,7 @@ export class EverestApi {
       if (result.status === 200) this.authToken = result.data.token;
       return result.data;
     } catch (err) {
-      throw new Error(err.response.data.error);
+      throw new Error(err.response ? err.response.data.error : err);
     }
   };
 
@@ -114,7 +114,7 @@ export class EverestApi {
       const result = await instance.get(EverestRoutesEnum.INFOS);
       return result.data;
     } catch (err) {
-      throw new Error(err.response.data.error);
+      throw new Error(err.response ? err.response.data.error : err);
     }
   };
 
@@ -127,7 +127,7 @@ export class EverestApi {
       const result = await instance.get(EverestRoutesEnum.SERVICES);
       return result.data;
     } catch (err) {
-      throw new Error(err.response.data.error);
+      throw new Error(err.response ? err.response.data.error : err);
     }
   };
 
@@ -138,7 +138,7 @@ export class EverestApi {
       const result = await instance.get(EverestRoutesEnum.VEHICLE_TYPES);
       return result.data;
     } catch (err) {
-      throw new Error(err.response.data.error);
+      throw new Error(err.response ? err.response.data.error : err);
     }
   };
 
@@ -151,7 +151,7 @@ export class EverestApi {
       const result = await instance.get(EverestRoutesEnum.AREAS_OF_SERVICE);
       return result.data;
     } catch (err) {
-      throw new Error(err.response.data.error);
+      throw new Error(err.response ? err.response.data.error : err);
     }
   };
 
@@ -163,7 +163,7 @@ export class EverestApi {
         const result = await instance.get(EverestRoutesEnum.AVAILABILITIES);
         return result.data;
       } catch (err) {
-        throw new Error(err.response.data.error);
+        throw new Error(err.response ? err.response.data.error : err);
       }
     };
 
@@ -179,7 +179,7 @@ export class EverestApi {
       });
       return result.data;
     } catch (err) {
-      throw new Error(err.response.data.error);
+      throw new Error(err.response ? err.response.data.error : err);
     }
   };
 
@@ -202,7 +202,7 @@ export class EverestApi {
       });
       return result.data;
     } catch (err) {
-      throw new Error(err.response.data.error);
+      throw new Error(err.response ? err.response.data.error : err);
     }
   };
 
@@ -213,7 +213,7 @@ export class EverestApi {
       const result = await instance.get(EverestRoutesEnum.GET_MISSION_STATUSES);
       return result.data;
     } catch (err) {
-      throw new Error(err.response.data.error);
+      throw new Error(err.response ? err.response.data.error : err);
     }
   };
 
@@ -233,7 +233,7 @@ export class EverestApi {
       });
       return result.data;
     } catch (err) {
-      throw new Error(err.response.data.error);
+      throw new Error(err.response ? err.response.data.error : err);
     }
   };
 
@@ -251,7 +251,7 @@ export class EverestApi {
       });
       return result.data;
     } catch (err) {
-      throw new Error(err.response.data.error);
+      throw new Error(err.response ? err.response.data.error : err);
     }
   };
 
@@ -269,7 +269,7 @@ export class EverestApi {
       });
       return result.data;
     } catch (err) {
-      throw new Error(err.response.data.error);
+      throw new Error(err.response ? err.response.data.error : err);
     }
   };
 
@@ -287,7 +287,7 @@ export class EverestApi {
       });
       return result.data;
     } catch (err) {
-      throw new Error(err.response.data.error);
+      throw new Error(err.response ? err.response.data.error : err);
     }
   };
 
@@ -302,7 +302,7 @@ export class EverestApi {
       });
       return result.data;
     } catch (err) {
-      throw new Error(err.response.data.error);
+      throw new Error(err.response ? err.response.data.error : err);
     }
   };
 
@@ -318,7 +318,7 @@ export class EverestApi {
       );
       return result.data;
     } catch (err) {
-      throw new Error(err.response.data.error);
+      throw new Error(err.response ? err.response.data.error : err);
     }
   };
 
@@ -334,7 +334,7 @@ export class EverestApi {
       );
       return result.data;
     } catch (err) {
-      throw new Error(err.response.data.error);
+      throw new Error(err.response ? err.response.data.error : err);
     }
   };
 
@@ -350,7 +350,7 @@ export class EverestApi {
       });
       return result.data;
     } catch (err) {
-      throw new Error(err.response.data.error);
+      throw new Error(err.response ? err.response.data.error : err);
     }
   };
 
@@ -365,7 +365,7 @@ export class EverestApi {
       });
       return result.data;
     } catch (err) {
-      throw new Error(err.response.data.error);
+      throw new Error(err.response ? err.response.data.error : err);
     }
   };
 
@@ -381,7 +381,7 @@ export class EverestApi {
       );
       return result.data;
     } catch (err) {
-      throw new Error(err.response.data.error);
+      throw new Error(err.response ? err.response.data.error : err);
     }
   };
 
@@ -394,7 +394,7 @@ export class EverestApi {
       const result = await instance.put(EverestRoutesEnum.UPDATE_CLIENT, input);
       return result.data;
     } catch (err) {
-      throw new Error(err.response.data.error);
+      throw new Error(err.response ? err.response.data.error : err);
     }
   };
 
@@ -409,7 +409,7 @@ export class EverestApi {
       });
       return result.data;
     } catch (err) {
-      throw new Error(err.response.data.error);
+      throw new Error(err.response ? err.response.data.error : err);
     }
   };
 
@@ -425,7 +425,7 @@ export class EverestApi {
       });
       return result.data;
     } catch (err) {
-      throw new Error(err.response.data.error);
+      throw new Error(err.response ? err.response.data.error : err);
     }
   };
 
@@ -440,7 +440,7 @@ export class EverestApi {
       });
       return result.data;
     } catch (err) {
-      throw new Error(err.response.data.error);
+      throw new Error(err.response ? err.response.data.error : err);
     }
   };
 
@@ -453,7 +453,7 @@ export class EverestApi {
       const result = await instance.post(EverestRoutesEnum.CREATE_AGENT, input);
       return result.data;
     } catch (err) {
-      throw new Error(err.response.data.error);
+      throw new Error(err.response ? err.response.data.error : err);
     }
   };
 
@@ -466,7 +466,7 @@ export class EverestApi {
       const result = await instance.put(EverestRoutesEnum.UPDATE_AGENT, input);
       return result.data;
     } catch (err) {
-      throw new Error(err.response.data.error);
+      throw new Error(err.response ? err.response.data.error : err);
     }
   };
 
@@ -481,7 +481,7 @@ export class EverestApi {
       });
       return result.data;
     } catch (err) {
-      throw new Error(err.response.data.error);
+      throw new Error(err.response ? err.response.data.error : err);
     }
   };
 
@@ -497,7 +497,7 @@ export class EverestApi {
   //     });
   //     return result.data;
   //   } catch (err) {
-  //     throw new Error(err.response.data.error);
+  //     throw new Error(err.response ? err.response.data.error : err);;
   //   }
   // };
 
@@ -513,7 +513,7 @@ export class EverestApi {
       });
       return result.data;
     } catch (err) {
-      throw new Error(err.response.data.error);
+      throw new Error(err.response ? err.response.data.error : err);
     }
   };
 
@@ -528,7 +528,7 @@ export class EverestApi {
       });
       return result.data;
     } catch (err) {
-      throw new Error(err.response.data.error);
+      throw new Error(err.response ? err.response.data.error : err);
     }
   };
 
@@ -544,7 +544,7 @@ export class EverestApi {
       );
       return result.data;
     } catch (err) {
-      throw new Error(err.response.data.error);
+      throw new Error(err.response ? err.response.data.error : err);
     }
   };
 
@@ -560,7 +560,7 @@ export class EverestApi {
       );
       return result.data;
     } catch (err) {
-      throw new Error(err.response.data.error);
+      throw new Error(err.response ? err.response.data.error : err);
     }
   };
 
@@ -575,7 +575,7 @@ export class EverestApi {
       });
       return result.data;
     } catch (err) {
-      throw new Error(err.response.data.error);
+      throw new Error(err.response ? err.response.data.error : err);
     }
   };
 
@@ -591,7 +591,7 @@ export class EverestApi {
       });
       return result.data;
     } catch (err) {
-      throw new Error(err.response.data.error);
+      throw new Error(err.response ? err.response.data.error : err);
     }
   };
 
@@ -606,7 +606,7 @@ export class EverestApi {
       });
       return result.data;
     } catch (err) {
-      throw new Error(err.response.data.error);
+      throw new Error(err.response ? err.response.data.error : err);
     }
   };
 
@@ -622,7 +622,7 @@ export class EverestApi {
       );
       return result.data;
     } catch (err) {
-      throw new Error(err.response.data.error);
+      throw new Error(err.response ? err.response.data.error : err);
     }
   };
 
@@ -638,7 +638,7 @@ export class EverestApi {
       );
       return result.data;
     } catch (err) {
-      throw new Error(err.response.data.error);
+      throw new Error(err.response ? err.response.data.error : err);
     }
   };
 
@@ -653,7 +653,7 @@ export class EverestApi {
       });
       return result.data;
     } catch (err) {
-      throw new Error(err.response.data.error);
+      throw new Error(err.response ? err.response.data.error : err);
     }
   };
 
@@ -671,7 +671,7 @@ export class EverestApi {
       );
       return result.data;
     } catch (err) {
-      throw new Error(err.response.data.error);
+      throw new Error(err.response ? err.response.data.error : err);
     }
   };
 }
