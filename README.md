@@ -149,6 +149,16 @@ Then test all the app with jest (100% coverage), you need to run this command li
 $ yarn test
 ```
 
+# ⚔️ Limitations
+
+Be careful about dates given by Everest, the format is timestamp based on unix system (in seconds) and the JS timestamp format is based on milliseconds format.
+From all timestamps received from Everest, you can apply this code (consider in this example `everestUnixTimestamp` is a date from everest):
+
+```typescript
+console.log(everestUnixTimestamp); // 1672531200 (as Sunday 1 January 2023 00:00:00 GMT+01:00)
+const date = new Date(everestUnixTimestamp * 1000); // Converted in a JS datetime (based on milliseconds timestamp)
+```
+
 ## License
 
 This package is [MIT licensed](LICENSE.md).

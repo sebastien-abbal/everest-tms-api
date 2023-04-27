@@ -91,6 +91,9 @@ export class EverestApi {
       },
     });
 
+  private convertJsTimestampToUnixTimestamp = (timestamp: number) =>
+    parseInt((timestamp / 1000).toString());
+
   // General
   public authenticate = async (): Promise<IEverestAuthenticateResponse> => {
     const instance = this.createInstance();
@@ -227,7 +230,9 @@ export class EverestApi {
         data: {
           ...input,
           start_date: input.start_date
-            ? new Date(input.start_date).getTime()
+            ? this.convertJsTimestampToUnixTimestamp(
+                new Date(input.start_date).getTime(),
+              )
             : undefined,
         },
       });
@@ -246,7 +251,9 @@ export class EverestApi {
       const result = await instance.post(EverestRoutesEnum.ESTIMATE_MISSION, {
         ...input,
         start_date: input.start_date
-          ? new Date(input.start_date).getTime()
+          ? this.convertJsTimestampToUnixTimestamp(
+              new Date(input.start_date).getTime(),
+            )
           : undefined,
       });
       return result.data;
@@ -264,7 +271,9 @@ export class EverestApi {
       const result = await instance.post(EverestRoutesEnum.CREATE_MISSION, {
         ...input,
         start_date: input.start_date
-          ? new Date(input.start_date).getTime()
+          ? this.convertJsTimestampToUnixTimestamp(
+              new Date(input.start_date).getTime(),
+            )
           : undefined,
       });
       return result.data;
@@ -282,7 +291,9 @@ export class EverestApi {
       const result = await instance.put(EverestRoutesEnum.UPDATE_MISSION, {
         ...input,
         start_date: input.start_date
-          ? new Date(input.start_date).getTime()
+          ? this.convertJsTimestampToUnixTimestamp(
+              new Date(input.start_date).getTime(),
+            )
           : undefined,
       });
       return result.data;
