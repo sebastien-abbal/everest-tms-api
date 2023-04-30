@@ -94,17 +94,17 @@ export interface IEverestInvoiceCreatedHook {
 
   /**
    *
-   * @type {string}
+   * @type {number}
    * @memberof IEverestInvoiceCreatedHook
    */
-  created_by: string;
+  created_by: number;
 
   /**
    *
-   * @type {string}
+   * @type {number}
    * @memberof IEverestInvoiceCreatedHook
    */
-  created_for: string;
+  created_for: number;
 }
 
 export interface IEverestInvoiceUpdatedHook {
@@ -208,17 +208,17 @@ export interface IEverestInvoiceUpdatedHook {
 
   /**
    *
-   * @type {string}
+   * @type {number}
    * @memberof IEverestInvoiceUpdatedHook
    */
-  created_by: string;
+  created_by: number;
 
   /**
    *
-   * @type {string}
+   * @type {number}
    * @memberof IEverestInvoiceUpdatedHook
    */
-  created_for: string;
+  created_for: number;
 }
 
 export interface IEverestInvoiceDeletedHook {

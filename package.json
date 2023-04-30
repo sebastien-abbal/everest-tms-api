@@ -1,6 +1,6 @@
 {
   "name": "everest-tms-api",
-  "version": "1.4.9",
+  "version": "1.4.10",
   "description": "Package that allows you to easily interact with the Everest TMS.",
   "company": "Cogepart",
   "author": "ABBAL Sébastien",

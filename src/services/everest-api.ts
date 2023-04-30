@@ -196,10 +196,14 @@ export class EverestApi {
         data: {
           ...input,
           date_between_start: input.date_between_start
-            ? new Date(input.date_between_start).getTime()
+            ? this.convertJsTimestampToUnixTimestamp(
+                new Date(input.date_between_start).getTime(),
+              )
             : undefined,
           date_between_end: input.date_between_end
-            ? new Date(input.date_between_end).getTime()
+            ? this.convertJsTimestampToUnixTimestamp(
+                new Date(input.date_between_end).getTime(),
+              )
             : undefined,
         },
       });

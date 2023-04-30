@@ -100,10 +100,10 @@ export interface IEverestCreateInvoiceInput {
   created_for: number;
   /**
    * client:<ID>
-   * @type {string}
+   * @type {number}
    * @memberof IEverestCreateInvoiceInput
    */
-  created_by?: string;
+  created_by?: number;
   /**
    *
    * @type {EverestInvoiceValidationEnum}
