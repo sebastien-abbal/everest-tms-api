@@ -72,7 +72,7 @@ export enum EverestInvoiceValidationEnum {
   validated = '1',
 }
 
-export enum EverestInvoiceStatusnEnum {
+export enum EverestInvoiceStatusEnum {
   pending = '0',
   paid = '1',
 }

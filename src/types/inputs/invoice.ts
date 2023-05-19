@@ -1,5 +1,5 @@
 import {
-  EverestInvoiceStatusnEnum,
+  EverestInvoiceStatusEnum,
   EverestInvoiceTypeEnum,
   EverestInvoiceValidationEnum,
 } from '../enums';
@@ -112,10 +112,10 @@ export interface IEverestCreateInvoiceInput {
   validated?: EverestInvoiceValidationEnum;
   /**
    *
-   * @type {EverestInvoiceStatusnEnum}
+   * @type {EverestInvoiceStatusEnum}
    * @memberof IEverestCreateInvoiceInput
    */
-  status?: EverestInvoiceStatusnEnum;
+  status?: EverestInvoiceStatusEnum;
   /**
    *
    * @type {Array<string>}
@@ -204,10 +204,10 @@ export interface IEverestUpdateInvoiceInput {
   validated?: EverestInvoiceValidationEnum;
   /**
    *
-   * @type {EverestInvoiceStatusnEnum}
+   * @type {EverestInvoiceStatusEnum}
    * @memberof IEverestCreateInvoiceInput
    */
-  status?: EverestInvoiceStatusnEnum;
+  status?: EverestInvoiceStatusEnum;
   /**
    *
    * @type {Array<string>}
