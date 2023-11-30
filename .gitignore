@@ -5,6 +5,7 @@ TODO
 /lib
 /node_modules
 tsconfig.build.tsbuildinfo
+tsconfig.tsbuildinfo
 
 # Envs
 .env
