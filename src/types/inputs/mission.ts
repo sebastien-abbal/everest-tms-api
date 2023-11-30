@@ -305,7 +305,7 @@ export interface IEverestUpdateMissionInput {
    * @type {number}
    * @memberof IEverestUpdateMissionInput
    */
-  service_id: number;
+  service_id?: number;
   /**
    *
    * @type {number}
